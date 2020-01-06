@@ -10,12 +10,13 @@ const Accordion = ({ title, content }) => {
 
   function toggleAccordion(){
     setActive(active === "" ? "active" : "");
-    setHeight(active === "active"? "0px": `${accordionContent.current.scrollHeight}px`)
+    setHeight(active === "active" ? "0px" : `${accordionContent.current.scrollHeight}px`)
+    setRotate(active ==="active" ? "accordion__icon" : "accordion__icon rotate")
   }
 
   return (
     <div className="accordion__section">
-      <button className={`accordion ${active}`} >
+      <button className={`accordion ${active}`} onClick={toggleAccordion}>
         <p className="accordion__title">{title}</p>
         <Chevron className={`${rotate}`} width={10} fill={"#777"} />
       </button>
